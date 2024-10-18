@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Топологично Сортиране</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="stylesheet" href="https://unpkg.com/vis-network/styles/vis-network.min.css" />
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+</head>
+<body>
+    <div class="loading" id="loading">
+        <div class="loader-container">
+            <img class="loading-img"src="logo.png">
+        </div>   
+        <script>
+            window.onload = function() {
+                document.getElementById('loading').style.display = 'block';
+                setTimeout(function() {
+                    document.getElementById('loading').style.display = 'none';
+                }, 3200); 
+            };
+        </script>
+    </div>
+
+    <div id="particles-js"></div>
+        <div class="container">
+            <img src="logo.png">
+            <h1>Топологично Сортиране на Граф</h1>
+            <form id="matrixForm">
+                <label for="matrixSize">Въведи размер на матрицата:</label>
+                <input type="number" id="matrixSize" min="2" max="10" required title="Моля, въведете число между 2 и 10.">
+                <button type="button" onclick="generateMatrix()">Генерирай матрица</button>
+            </form>
+            <div id="matrixContainer"></div>
+            <button id="sortButton" onclick="topologicalSort()" style="display: none;">Топологично сортиране</button>
+            <div id="outputContainer"></div>
+            <div id="graphContainer" style="height: 400px; border: 1px solid lightgray; border-radius: 20px;box-shadow: inset 3px 3px 6px 0px rgb(0 0 0/ 15%); ; margin-top: 20px;background-color: #dbdbdb; display: none;"></div>
+        </div>
+    <script src="java.js"></script>
+    <script type="text/javascript" src="particles.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
